@@ -1754,6 +1754,11 @@ document
 confetti();
 
 
+sendTelegram(
+normalDate,
+time,
+plan.value
+);
 
 }
 
@@ -2122,7 +2127,70 @@ item.remove();
 
 }
 
+async function sendTelegram(date,time,plan){
 
+
+let token =
+"8640499730:AAG9sVVW82P9nv81QfSyQUfBpYoDOytSzB8";
+
+
+let chatId =
+"8945998910";
+
+
+
+let text =
+
+`🤍 Анара выбрала встречу
+
+
+📅 Дата:
+${date}
+
+
+🕒 Время:
+${time}
+
+
+✨ План:
+${plan}
+
+
+Жду встречи 🤍`;
+
+
+
+fetch(
+
+"https://api.telegram.org/bot"
++ token +
+"/sendMessage",
+
+{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":
+"application/json"
+
+},
+
+body:JSON.stringify({
+
+chat_id:chatId,
+
+text:text
+
+})
+
+}
+
+);
+
+
+}
 
 </script>
 
