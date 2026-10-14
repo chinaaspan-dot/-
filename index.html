@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Для Анары 🤍</title>
+<title>Для Мадины 🤍</title>
 
 
 <style>
@@ -608,11 +608,11 @@ translateY(0);
 
     position:relative;
 
-    margin:0 auto 35px;
+    margin:0 auto 30px;
 
     cursor:pointer;
 
-    perspective:900px;
+    perspective:800px;
 
 }
 
@@ -628,7 +628,7 @@ translateY(0);
 
     background:#d8a7ff;
 
-    border-radius:12px;
+    border-radius:10px;
 
 }
 
@@ -644,11 +644,11 @@ translateY(0);
 
     height:110px;
 
+    background:white;
+
     left:30px;
 
     top:20px;
-
-    background:white;
 
     border-radius:8px;
 
@@ -660,7 +660,7 @@ translateY(0);
 
     font-size:45px;
 
-    transition:1.2s;
+    transition:1s;
 
 }
 
@@ -672,8 +672,6 @@ translateY(0);
 
     bottom:0;
 
-    left:0;
-
     width:0;
 
     height:0;
@@ -682,7 +680,7 @@ translateY(0);
 
     border-right:110px solid transparent;
 
-    border-bottom:80px solid #c28be8;
+    border-bottom:80px solid #c38be8;
 
     z-index:3;
 
@@ -702,25 +700,66 @@ translateY(0);
 
     height:0;
 
-    border-left:110px solid transparent;
+    border-left:90px solid transparent;
 
-    border-right:110px solid transparent;
+    border-right:90px solid transparent;
 
-    border-top:75px solid #b875df;
+    border-top:65px solid #c28bea;
 
     transform-origin:top;
 
-    transition:1.2s;
-
-    z-index:4;
+    transition:1s;
 
 }
 
 
 
+.paper{
+
+    position:absolute;
+
+    background:white;
+
+    width:130px;
+
+    height:90px;
+
+    left:25px;
+
+    top:25px;
+
+    border-radius:5px;
+
+    transition:1s;
+
+}
+
+
+
+.letter{
+
+    position:absolute;
+
+    z-index:3;
+
+    left:75px;
+
+    top:45px;
+
+    font-size:30px;
+
+    transition:1s;
+
+}
+
+
+
+/* открытие */
+
 .envelope.open .flap{
 
-    transform:rotateX(180deg);
+    transform:
+    rotateX(180deg);
 
 }
 
@@ -728,494 +767,20 @@ translateY(0);
 
 .envelope.open .paper{
 
-    transform:translateY(-90px);
+    transform:
+    translateY(-70px);
 
 }
 
 
 
-.envelope.open{
+.envelope.open .letter{
 
-    animation:
-
-    shake 1.2s ease;
-
-}
-
-
-
-@keyframes shake{
-
-
-0%{
-
-transform:scale(1);
+    transform:
+    translateY(-80px);
 
 }
 
-
-40%{
-
-transform:scale(1.1) rotate(-3deg);
-
-}
-
-
-70%{
-
-transform:scale(1.1) rotate(3deg);
-
-}
-
-
-100%{
-
-transform:scale(1);
-
-}
-
-.mailbox{
-
-    width:220px;
-
-    height:140px;
-
-    margin:0 auto 30px;
-
-    position:relative;
-
-    cursor:pointer;
-
-    perspective:800px;
-
-}
-
-
-
-.mail-back{
-
-    position:absolute;
-
-    inset:0;
-
-    background:#d8a7ff;
-
-    border-radius:12px;
-
-}
-
-
-
-.mail-letter{
-
-    position:absolute;
-
-    width:160px;
-
-    height:100px;
-
-    left:30px;
-
-    top:25px;
-
-    background:white;
-
-    border-radius:8px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:45px;
-
-    z-index:2;
-
-    transition:1s;
-
-}
-
-
-
-.mail-front{
-
-    position:absolute;
-
-    bottom:0;
-
-    left:0;
-
-    border-left:110px solid transparent;
-
-    border-right:110px solid transparent;
-
-    border-bottom:75px solid #bd82e6;
-
-    z-index:3;
-
-}
-
-
-
-.mail-flap{
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    border-left:110px solid transparent;
-
-    border-right:110px solid transparent;
-
-    border-top:75px solid #a968d4;
-
-    transform-origin:top;
-
-    transition:1s;
-
-    z-index:4;
-
-}
-
-
-
-.mailbox.open .mail-flap{
-
-    transform:rotateX(180deg);
-
-}
-
-
-
-.mailbox.open .mail-letter{
-
-    transform:translateY(-90px);
-
-}
-
-
-
-.mailbox.open{
-
-    animation:
-    mailShake 1s;
-
-}
-
-
-
-@keyframes mailShake{
-
-
-0%{
-transform:scale(1);
-}
-
-
-50%{
-transform:scale(1.1) rotate(3deg);
-}
-
-
-100%{
-transform:scale(1);
-}
-
-
-.small-heart{
-
-    font-size:45px;
-
-    animation:
-    pulse 1.8s infinite;
-
-}
-
-
-
-@keyframes pulse{
-
-
-0%{
-
-transform:scale(1);
-
-}
-
-
-50%{
-
-transform:scale(1.2);
-
-}
-
-
-100%{
-
-transform:scale(1);
-
-}
-
-
-}
-
-
-
-.letter-text{
-
-    animation:
-
-    appearText 1s ease;
-
-}
-
-
-
-@keyframes appearText{
-
-
-from{
-
-opacity:0;
-
-transform:
-translateY(20px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:
-translateY(0);
-
-}
-
-
-}
-
-
-
-
-.yes-btn{
-
-    background:
-
-    linear-gradient(
-    135deg,
-    #ff9eb5,
-    #e56b91
-    );
-
-
-}
-
-
-
-.no-btn{
-
-    background:
-
-    linear-gradient(
-    135deg,
-    #cdb4db,
-    #a58ac4
-    );
-
-
-.final-heart{
-
-    font-size:70px;
-
-    animation:
-
-    pulse 1.5s infinite;
-
-}
-
-
-
-.date-card{
-
-    background:
-
-    linear-gradient(
-    135deg,
-    #fff0f5,
-    #f0e6ff
-    );
-
-
-    border-radius:25px;
-
-
-    padding:25px;
-
-
-    margin:20px 0;
-
-
-    box-shadow:
-
-    0 15px 35px
-    rgba(0,0,0,.1);
-
-
-}
-
-
-
-.final-text{
-
-    font-size:18px;
-
-    color:#777;
-
-    animation:
-
-    appearText 1.5s ease;
-
-}
-
-/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
-
-
-@media(max-width:600px){
-
-
-body{
-
-    padding:15px;
-
-    align-items:flex-start;
-
-    padding-top:25px;
-
-    overflow-x:hidden;
-
-}
-
-
-
-
-.screen{
-
-    width:100%;
-
-    padding:25px 18px;
-
-    border-radius:25px;
-
-}
-
-
-
-
-h1{
-
-    font-size:28px;
-
-    line-height:1.2;
-
-}
-
-
-
-h2{
-
-    font-size:20px;
-
-}
-
-
-
-p{
-
-    font-size:16px;
-
-    line-height:1.5;
-
-}
-
-
-
-
-button{
-
-    width:100%;
-
-    padding:15px;
-
-    font-size:16px;
-
-}
-
-
-
-.answer{
-
-    height:180px;
-
-}
-
-
-
-#noBtn{
-
-    max-width:80vw;
-
-    white-space:normal;
-
-}
-
-
-
-
-.plan{
-
-    padding:15px;
-
-}
-
-
-
-.emoji{
-
-    font-size:38px;
-
-}
-
-
-
-
-.final-heart{
-
-    font-size:55px;
-
-}
-
-
-
-#musicBtn{
-
-    bottom:15px;
-
-    right:15px;
-
-    font-size:14px;
-
-    padding:10px 15px;
-
-}
-
-
-
-}
 
 </style>
 
@@ -1231,17 +796,17 @@ button{
 <div id="one" class="screen">
 
 
-<div class="mailbox" onclick="openInvite()">
+<div class="envelope" onclick="openInvite()">
 
-<div class="mail-back"></div>
+    <div class="back"></div>
 
-<div class="mail-letter">
-🤍
-</div>
+    <div class="paper">
+        🤍
+    </div>
 
-<div class="mail-front"></div>
+    <div class="front"></div>
 
-<div class="mail-flap"></div>
+    <div class="flap"></div>
 
 </div>
 
@@ -1277,33 +842,21 @@ button{
 <div id="two" class="screen hidden">
 
 
-<div class="small-heart">
-🤍
-</div>
-
-
-
 <h1>
-Анара 🤍
+Мадина 🤍
 </h1>
 
 
 
-<p class="letter-text">
-
-Я хочу пригласить тебя провести
-особенный вечер вместе ✨
-
+<p>
+Мне хочется провести этот вечер вместе с тобой.
 </p>
 
 
 
-<p class="letter-text">
-
-Без спешки, с улыбками,
-хорошими разговорами
-и приятной атмосферой 🌙
-
+<p>
+Улыбки, приятные разговоры
+и хорошая атмосфера ✨
 </p>
 
 
@@ -1317,9 +870,7 @@ button{
 <div class="answer">
 
 
-<button 
-class="yes-btn"
-onclick="openPlans()">
+<button onclick="openPlans()">
 
 Да ❤️
 
@@ -1327,21 +878,18 @@ onclick="openPlans()">
 
 
 
-<button 
-id="noBtn"
-class="no-btn">
+<button id="noBtn">
 
 Нет 🙈
 
 </button>
 
 
-
 </div>
 
 
-
 </div>
+
 
 
 
@@ -1516,55 +1064,35 @@ placeholder="Твои пожелания ✨">
 
 
 
+
+
+
+
+
+
 <!-- ЭКРАН 4 -->
 
 
 <div id="four" class="screen hidden">
 
 
-<div class="final-heart">
+<h1>
+Мадина 🤍
+</h1>
 
-❤️
 
-</div>
+<p id="result"></p>
 
 
 
 <h1>
-
-До встречи, Анара 🤍
-
+✨
 </h1>
 
 
-
-<div class="date-card">
-
-
-<p id="result">
-
+<p>
+Буду ждать нашей встречи ❤️
 </p>
-
-
-</div>
-
-
-
-<p class="final-text">
-
-Я буду ждать нашей встречи ✨
-
-Спасибо, что выбрала этот вечер вместе со мной 🤍
-
-</p>
-
-
-
-<button onclick="location.reload()">
-
-Начать заново 💌
-
-</button>
 
 
 
@@ -1581,12 +1109,11 @@ placeholder="Твои пожелания ✨">
 function openInvite(){
 
 
-let mail =
-document.querySelector(".mailbox");
+let envelope =
+document.querySelector(".envelope");
 
 
-
-mail.classList.add("open");
+envelope.classList.add("open");
 
 
 
@@ -1733,34 +1260,40 @@ document
 
 
 `
+Спасибо, что выбрала этот вечер ✨
+
+<br><br>
 
 📅 ${niceDate}
 
-<br><br>
+<br>
 
 🕒 ${time}
 
 <br><br>
 
-✨ Наш вечер:
 
-<br><br>
+✨ Наш план:
+
+<br>
 
 <b>${plan.value}</b>
 
+<br><br>
+
+Я буду ждать нашей встречи 🤍
+
 `;
+
 
 
 confetti();
 
 
-sendTelegram(
-niceDate,
-time,
-plan.value
-);
 
 }
+
+
 
 
 
@@ -2125,70 +1658,7 @@ item.remove();
 
 }
 
-async function sendTelegram(date,time,plan){
 
-
-let token =
-"8640499730:AAG9sVVW82P9nv81QfSyQUfBpYoDOytSzB8";
-
-
-let chatId =
-"8945998910";
-
-
-
-let text =
-
-`🤍 Анара выбрала встречу
-
-
-📅 Дата:
-${date}
-
-
-🕒 Время:
-${time}
-
-
-✨ План:
-${plan}
-
-
-Жду встречи 🤍`;
-
-
-
-fetch(
-
-"https://api.telegram.org/bot"
-+ token +
-"/sendMessage",
-
-{
-
-method:"POST",
-
-headers:{
-
-"Content-Type":
-"application/json"
-
-},
-
-body:JSON.stringify({
-
-chat_id:chatId,
-
-text:text
-
-})
-
-}
-
-);
-
-
-}
 
 </script>
 
