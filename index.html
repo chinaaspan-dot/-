@@ -1231,7 +1231,7 @@ button{
 <div id="one" class="screen">
 
 
-<div class="mailbox" onclick="openInvite()">
+<div class="mailbox" onclick="document.getElementById('one').classList.add('hidden'); document.getElementById('two').classList.remove('hidden')">
 
 <div class="mail-back"></div>
 
@@ -1258,7 +1258,7 @@ button{
 
 
 
-<button onclick="openInvite()">
+<button onclick="document.getElementById('one').classList.add('hidden'); document.getElementById('two').classList.remove('hidden')">
 
 Открыть письмо 💌
 
