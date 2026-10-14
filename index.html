@@ -2125,11 +2125,11 @@ item.remove();
 
 }
 
-// Вставь сюда URL веб-приложения Google Apps Script, оканчивающийся на /exec.
-// Не вставляй сюда токен Telegram-бота.
+    
+
 const TELEGRAM_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxJJpeXtPKBX1dEipjuOb0JIQjPvjbFfzaoAKrhPEAJJIAOluQVp0z7xN0nVtrIyiB7/exec";
 
-async function sendTelegram(date, time, plan){
+async function sendTelegram(date, time, plan) {
     const payload = {
         answer: "Да ❤️",
         date: date,
@@ -2138,8 +2138,6 @@ async function sendTelegram(date, time, plan){
     };
 
     try {
-        // text/plain помогает избежать CORS preflight-запроса.
-        // Ответ сервера не читаем: для no-cors он недоступен браузеру.
         await fetch(TELEGRAM_WEB_APP_URL, {
             method: "POST",
             mode: "no-cors",
@@ -2148,11 +2146,14 @@ async function sendTelegram(date, time, plan){
             },
             body: JSON.stringify(payload)
         });
+
+        console.log("Запрос отправлен в Telegram");
     } catch (error) {
-        console.error("Не удалось отправить ответ в Telegram:", error);
-        alert("Не удалось отправить ответ. Попробуй ещё раз позже.");
+        console.error("Ошибка отправки:", error);
+        alert("Не удалось отправить ответ. Попробуй ещё раз.");
     }
 }
+
 
 </script>
 
