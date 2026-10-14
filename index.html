@@ -2127,7 +2127,7 @@ item.remove();
 
 // Вставь сюда URL веб-приложения Google Apps Script, оканчивающийся на /exec.
 // Не вставляй сюда токен Telegram-бота.
-const TELEGRAM_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxJJpeXtPKBX1dEipjuOb0JIQjPvjbFfzaoAKrhPEAJJIAOluQVp0z7xN0nVtrIyiB7/exec";
+const TELEGRAM_WEB_APP_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_EXEC_URL_HERE";
 
 async function sendTelegram(date, time, plan){
     const payload = {
@@ -2152,21 +2152,6 @@ async function sendTelegram(date, time, plan){
         console.error("Не удалось отправить ответ в Telegram:", error);
         alert("Не удалось отправить ответ. Попробуй ещё раз позже.");
     }
-},
-
-body:JSON.stringify({
-
-chat_id:chatId,
-
-text:text
-
-})
-
-}
-
-);
-
-
 }
 
 </script>
