@@ -2125,54 +2125,33 @@ item.remove();
 
 }
 
-async function sendTelegram(date,time,plan){
+// Вставь сюда URL веб-приложения Google Apps Script, оканчивающийся на /exec.
+// Не вставляй сюда токен Telegram-бота.
+const TELEGRAM_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxJJpeXtPKBX1dEipjuOb0JIQjPvjbFfzaoAKrhPEAJJIAOluQVp0z7xN0nVtrIyiB7/exec";
 
+async function sendTelegram(date, time, plan){
+    const payload = {
+        answer: "Да ❤️",
+        date: date,
+        time: time,
+        plan: plan
+    };
 
-let token =
-"8219447036:AAE5N-XdxomJBi20WhHb_AtGS3LlUgUDhEw";
-
-
-let chatId =
-"8945998910";
-
-
-
-let text =
-
-`🤍 Мадина выбрала встречу
-
-
-📅 Дата:
-${date}
-
-
-🕒 Время:
-${time}
-
-
-✨ План:
-${plan}
-
-
-Жду встречи 🤍`;
-
-
-
-fetch(
-
-"https://api.telegram.org/bot"
-+ token +
-"/sendMessage",
-
-{
-
-method:"POST",
-
-headers:{
-
-"Content-Type":
-"application/json"
-
+    try {
+        // text/plain помогает избежать CORS preflight-запроса.
+        // Ответ сервера не читаем: для no-cors он недоступен браузеру.
+        await fetch(TELEGRAM_WEB_APP_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain;charset=UTF-8"
+            },
+            body: JSON.stringify(payload)
+        });
+    } catch (error) {
+        console.error("Не удалось отправить ответ в Telegram:", error);
+        alert("Не удалось отправить ответ. Попробуй ещё раз позже.");
+    }
 },
 
 body:JSON.stringify({
